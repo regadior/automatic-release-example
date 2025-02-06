@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/regadior/automatic-release-example/compare/v1.2.0...v2.0.0) (2025-02-06)
+
+
+### Features
+
+* **main:** test ([9571011](https://github.com/regadior/automatic-release-example/commit/9571011b7ae327016c85d97755b12089915b5596))
+
+
+### BREAKING CHANGES
+
+* **main:** BREAKING CHANGE:
+
 # [1.2.0](https://github.com/regadior/automatic-release-example/compare/v1.1.1...v1.2.0) (2025-02-06)
 
 
