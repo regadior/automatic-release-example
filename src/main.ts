@@ -1,4 +1,4 @@
-
-export class test{
-  constructor(){}
+export class test {
+  constructor() {}
+  public async execute() {}
 }
