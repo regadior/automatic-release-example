@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/regadior/automatic-release-example/compare/v1.0.0...v1.1.0) (2025-02-06)
+
+
+### Features
+
+* **main:** feat to test change version ([ff988a7](https://github.com/regadior/automatic-release-example/commit/ff988a77f5e843a55542d4f5d6cff1e4847b3cb4))
+
 # 1.0.0 (2025-02-06)
 
 
