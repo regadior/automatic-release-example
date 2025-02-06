@@ -1,4 +1,6 @@
 export class test {
   constructor() {}
-  public async execute() {}
+  public async execute() {
+    const test = 'test';
+  }
 }
