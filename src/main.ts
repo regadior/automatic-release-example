@@ -3,5 +3,6 @@ export class test {
   public async execute() {
     const test = 'test';
     console.log(test);
+    return test;
   }
 }
