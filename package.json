@@ -37,5 +37,8 @@
     "commitizen": {
       "path": "git-cz"
     }
+  },
+  "dependencies": {
+    "@semantic-release/exec": "^7.0.3"
   }
 }
