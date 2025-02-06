@@ -1,0 +1,5 @@
+npx commitlint --edit "$1" ||
+(
+  echo '✍📤 It seems that the format of the commit does not follow the conventional commit convention. You can also try committing with the "npm run commit" command.';
+  false;
+)
