@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/regadior/automatic-release-example/compare/v1.1.0...v1.1.1) (2025-02-06)
+
+
+### Bug Fixes
+
+* **main:** fix to test release ([efb11c3](https://github.com/regadior/automatic-release-example/commit/efb11c31fcc35bea97ba654458d4dbca70df3468))
+
 # [1.1.0](https://github.com/regadior/automatic-release-example/compare/v1.0.0...v1.1.0) (2025-02-06)
 
 
