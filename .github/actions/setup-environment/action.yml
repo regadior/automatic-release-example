@@ -1,0 +1,40 @@
+name: setup-environment
+description: Composite action to setup environment and install dependencies
+
+runs:
+  using: composite
+  steps:
+    - name: 🤹‍♂️ Install asdf
+      uses: asdf-vm/actions/setup@v3
+
+    - name: 🗂️ Cache asdf
+      id: cache-asdf
+      uses: actions/cache@v3
+      env:
+        cache-name: cache-asdf
+        cache-path: ~/.asdf
+      with:
+        path: ${{ env.cache-path }}
+        key: ${{ runner.os }}-se-${{ env.cache-name }}-${{ hashFiles('**/.tool-versions') }}
+        restore-keys: |
+          ${{ runner.os }}-se-${{ env.cache-name }}-
+
+    - name: 🛠️ Install tools from .tool-versions
+      if: ${{ steps.cache-asdf.outputs.cache-hit != 'true' }}
+      continue-on-error: true
+      uses: asdf-vm/actions/install@v3
+
+    - name: 🗂️ Cache node_modules
+      id: cache-node-modules
+      uses: actions/cache@v3
+      env:
+        cache-name: cache-node-modules
+        cache-path: node_modules
+      with:
+        path: ${{ env.cache-path }}
+        key: ${{ runner.os }}-se-${{ env.cache-name }}-${{ hashFiles('**/.tool-versions') }}-${{ hashFiles('**/package-lock.json') }}
+
+    - name: 📥 Install dependencies
+      if: ${{ steps.cache-node-modules.outputs.cache-hit != 'true' }}
+      shell: bash
+      run: npm ci

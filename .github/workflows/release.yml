@@ -1,0 +1,27 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: 🧙‍♂️ Setup environment
+        uses: ./.github/actions/setup-environment
+
+      - name: Run Semantic Release
+        uses: cycjimmy/semantic-release-action@v3
+        with:
+          extra_plugins: |
+            @semantic-release/git
+            @semantic-release/exec
+            @semantic-release/changelog
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
