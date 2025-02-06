@@ -1,0 +1,75 @@
+version: '3'
+
+env:
+  include:
+    - .env
+
+tasks:
+  requirements:
+    desc: "Check for Docker, Docker Compose, and NPM"
+    cmds:
+      - |
+        if ! command -v docker &> /dev/null; then
+          echo "🐳 Docker is not available. Please install docker"
+          exit 1
+        fi
+      - |
+        if ! command -v docker-compose &> /dev/null; then
+          echo "🐳🧩 Docker Compose is not available. Please install docker-compose"
+          exit 1
+        fi
+      - |
+        if ! command -v npm &> /dev/null; then
+          echo "📦🧩 NPM is not available. Please install npm"
+          exit 1
+        fi
+      - echo "🐳🧩📦 Docker, Docker Compose, and NPM are available"
+    silent: true
+
+  install:
+    desc: "Install dependencies"
+    deps:
+      - task: requirements
+    cmds:
+      - echo "🍿 Installing dependencies..."
+      - npm i
+  
+  db/push:
+    desc: "Push database migrations"
+    cmds:
+      - echo "▶️ Pushing database migrations..."
+      - npm run prisma:push
+
+  db/seed:
+    desc: "Generate database seed"
+    cmds:
+      - echo "▶️ Pushing database seed..."
+      - npm run prisma:seed
+
+  start:
+    desc: "Start app in development mode"
+    deps:
+      - task: install
+      - task: db/push
+    cmds:
+      - echo "▶️ Starting app in development mode..."
+      - npm run start:dev
+
+  start/db:
+    desc: "Start the database (Docker)"
+    cmds:
+      - echo "▶️ Starting database (Docker)..."
+      - docker-compose -f ./docker/docker-compose.yml --env-file .env up -d nestjs-skeleton-postgres
+
+  start/prod:
+    desc: "Start app in production mode (Docker)"
+    cmds:
+      - echo "▶️ Starting app in production mode (Docker)..."
+      - docker-compose -f ./docker/docker-compose.yml --env-file .env up --build
+
+  logs/prod:
+    desc: "Show production logs"
+    vars:
+      c: ""
+    cmds:
+      - docker-compose -f ./docker/docker-compose.yml --env-file .env logs --tail=100 -f {{.c}}
