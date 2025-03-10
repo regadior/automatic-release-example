@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/regadior/automatic-release-example/compare/v2.1.0...v2.2.0) (2025-03-10)
+
+
+### Features
+
+* **readme:** added more information in the readme ([a341d19](https://github.com/regadior/automatic-release-example/commit/a341d199d58755abeef9836204496e4c168c7547))
+
 # [2.1.0](https://github.com/regadior/automatic-release-example/compare/v2.0.0...v2.1.0) (2025-03-10)
 
 
