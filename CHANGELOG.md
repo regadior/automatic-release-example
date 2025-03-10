@@ -1,3 +1,15 @@
+# [2.1.0](https://github.com/regadior/automatic-release-example/compare/v2.0.0...v2.1.0) (2025-03-10)
+
+
+### Bug Fixes
+
+* fixed the release operationçç ([efbd032](https://github.com/regadior/automatic-release-example/commit/efbd032e3f6ae4781cd0caddf15b69e892c17e31))
+
+
+### Features
+
+* **readme:** readme completed ([4866eb5](https://github.com/regadior/automatic-release-example/commit/4866eb5f5855276b3d8b5b2d6d09d87099467280))
+
 # [2.0.0](https://github.com/regadior/automatic-release-example/compare/v1.2.0...v2.0.0) (2025-02-06)
 
 
