@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/regadior/automatic-release-example/compare/v2.2.0...v2.3.0) (2025-03-10)
+
+
+### Features
+
+* **readme:** added new phrase ([ec8ddb7](https://github.com/regadior/automatic-release-example/commit/ec8ddb782a44820a96ea3ae59c448355d696cc28))
+
 # [2.2.0](https://github.com/regadior/automatic-release-example/compare/v2.1.0...v2.2.0) (2025-03-10)
 
 
